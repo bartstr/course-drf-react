@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     appBar:{
-        borderBottom: '1px solid ${theme.palette.divider}',
+        borderBottom: `1px solid ${theme.palette.divider}`,
     },
 }));
 
@@ -18,7 +18,7 @@ function Header(){
         <CssBaseline />
         <AppBar
             position="static"
-            color="white"
+            color="inherit"
             elevation={0}
             className={classes.appBar}
         >
