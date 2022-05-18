@@ -9,7 +9,7 @@ class TestCreatePost(TestCase):
     def setUpTestData(cls):
         test_category = Category.objects.create(name='django')
         test_user = User.objects.create_user(username='test_user', password='test12345')
-        test_post = Post.objects.create(category=1, title='Test Post', excerpt='Excerpt Test Post',
+        test_post = Post.objects.create(category_id=1, title='Test Post', excerpt='Excerpt Test Post',
                                         content='Content Test Post', slug='post-title', author_id=1, status='published')
 
     def test_blog_content(self):
@@ -26,3 +26,4 @@ class TestCreatePost(TestCase):
         self.assertEqual(content, 'Content Test Post')
         self.assertEqual(status, 'published')
         self.assertEqual(str(post), 'Test Post')
+        self.assertEqual(str(category), 'django')
